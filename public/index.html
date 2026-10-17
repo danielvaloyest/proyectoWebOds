@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ODS 6 | Agua limpia y saneamiento</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <img src="img/academico2.png" alt="Logo" class="logo-colegio">
+    Colegio Académico El Poblado
+  </div>
+
+  <header class="hero" id="inicio">
+    <div class="hero__content">
+      <h1>El futuro fluye a través de nuestras manos: Protejamos el agua</h1>
+      <p class="hero__sub"> ODS 6: Agua limpia, saneamiento e higiene</p>
+      <a href="#registro" class="btn">Súmate al cambio</a>
+    </div>
+  </header>
+
+  <main>
+     <div class="fondo-seccion-que-es">
+      <section class="section section-que-es" id="que-es">
+        <h2>¿Qué es el ODS 6?</h2>
+        
+        <div class="slider-wrapper">
+          <div class="slide">
+            <p>El <strong>Objetivo de Desarrollo Sostenible 6 (ODS 6)</strong> busca garantizar que todas las personas tengan acceso a agua potable, saneamiento e higiene de forma <strong>segura, equitativa y sostenible</strong> antes del año 2030.</p>
+          </div>
+          <div class="slide">
+            <p>Este objetivo no significa únicamente tener agua disponible. También implica saber <strong>cómo se obtiene, cómo se trata, cómo se distribuye y cómo se utiliza</strong>. Por eso, es necesario evitar la contaminación, reducir el desperdicio, tratar las aguas residuales y proteger ríos, quebradas, humedales, páramos y otras fuentes hídricas.</p>
+          </div>
+        </div>
+        
+        <div class="slider-hint">Desliza hacia un lado ➔</div>
+      </section>
+    </div>
+
+    <section class="section" id="por-que">
+      <h2>¿Por qué es importante el ODS 6?</h2>
+      <div class="cards">
+        <article class="card"><p>[ingrese estadistica aqui]</p></article>
+        <article class="card"><p>[ingrese estadistica aqui]</p></article>
+        <article class="card"><p>[ingrese estadistica aqui]</p></article>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="viaje">
+      <h2>El Viaje del Agua</h2>
+      <ol class="timeline">
+        <li class="step"><span class="step__dot"></span><p>[ingrese texto aqui]</p></li>
+        <li class="step"><span class="step__dot"></span><p>[ingrese texto aqui]</p></li>
+        <li class="step"><span class="step__dot"></span><p>[ingrese texto aqui]</p></li>
+        <li class="step"><span class="step__dot"></span><p>[ingrese texto aqui]</p></li>
+      </ol>
+    </section>
+
+    <section class="section" id="acciones">
+      <h2>Acciones Ciudadanas</h2>
+      <div class="actions">
+        <div class="action"><p>[ingrese texto aqui]</p></div>
+        <div class="action"><p>[ingrese texto aqui]</p></div>
+        <div class="action"><p>[ingrese texto aqui]</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="registro">
+    <svg class="waves" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+      <path class="w1" d="M0,64 C240,128 480,0 720,48 C960,96 1200,128 1440,48 L1440,0 L0,0 Z"/>
+      <path class="w2" d="M0,32 C240,96 480,16 720,64 C960,112 1200,80 1440,24 L1440,0 L0,0 Z"/>
+    </svg>
+
+    <div class="footer__inner">
+      <h2>Súmate al cambio</h2>
+      <form id="formRegistro" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" minlength="3" maxlength="25"
+                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,25}" required autocomplete="off">
+                 <small class="hint">Mínimo 3 y máximo 25 caracteres</small>
+          <small class="error" data-for="nombre"></small>
+        </div>
+
+        <div class="field">
+          <label for="documento">Documento</label>
+          <input type="text" id="documento" name="documento" inputmode="numeric"
+                 maxlength="10" pattern="\d{10}" required autocomplete="off">
+          <small class="hint">Exactamente 10 dígitos</small>
+          <small class="error" data-for="documento"></small>
+        </div>
+
+        <div class="field">
+          <label for="grado">Grado</label>
+          <select id="grado" name="grado" required>
+            <option value="">Seleccione su grado</option>
+            <option value="Sexto">Sexto</option>
+            <option value="Septimo">Septimo</option>
+            <option value="Octavo">Octavo</option>
+            <option value="Noveno">Noveno</option>
+            <option value="Decimo">Decimo</option>
+            <option value="Once">Once</option>
+          </select>
+          <small class="error" data-for="grado"></small>
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" name="telefono" inputmode="numeric"
+                 maxlength="11" pattern="\d{11}" required autocomplete="off">
+                 <small class="hint">Exactamente 11 dígitos</small>
+          <small class="error" data-for="telefono"></small>
+        </div>
+
+        <button type="submit" class="btn btn--submit">Enviar</button>
+        <p id="estado" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </footer>
+
+  <div class="sub-footer">
+    <p>Colegio Académico El Poblado</p>
+    <p>Valentina Escamilla Torres</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

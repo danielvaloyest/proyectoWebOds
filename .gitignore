@@ -1,0 +1,5 @@
+node_modules/
+datos.csv
+.env
+*.log
+.DS_Store
