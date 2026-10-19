@@ -19,7 +19,7 @@ body {
 
 h1, h2 { line-height: 1.15; }
 .top-bar {
-  position: absolute;
+  position: fixed; /* Esta es la línea clave que lo mantiene fijo al hacer scroll */
   top: 0;
   left: 0;
   width: 100%;
@@ -31,7 +31,7 @@ h1, h2 { line-height: 1.15; }
   padding: 1.5rem;
   font-size: 1.4rem;
   font-weight: bold;
-  z-index: 10;
+  z-index: 999; /* Aumentado para que pase por encima de todas las demás secciones */
 }
 
 .logo-colegio {
@@ -78,28 +78,7 @@ h1, h2 { line-height: 1.15; }
 .section--alt > * { max-width: 760px; margin-left: auto; margin-right: auto; }
 .section h2 { text-align: center; font-size: clamp(1.7rem, 4vw, 2.6rem); margin-bottom: 3rem; }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-}
-.card {
-  background: linear-gradient(180deg, var(--white), #e6f8fb);
-  border-radius: 50% 50% 50% 50% / 38% 38% 62% 62%;
-  min-height: 280px;
-  padding: 3.5rem 2rem 2.5rem;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(10, 37, 64, .15);
-  animation: float 5s ease-in-out infinite;
-}
-.card:nth-child(2) { animation-delay: -1.6s; }
-.card:nth-child(3) { animation-delay: -3.2s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
+
 
 .timeline { list-style: none; position: relative; padding-left: 3rem; }
 .timeline::before {
@@ -186,8 +165,22 @@ h1, h2 { line-height: 1.15; }
 .btn--submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 #estado { text-align: center; margin-top: 1rem; font-weight: 600; min-height: 1.5rem; }
 
-.fondo-seccion-que-es {
-  background: url('img/paramo.webp') center/cover no-repeat;
+
+ .fondo-seccion-que-es {
+   min-height: 100vh;
+  /* El linear-gradient actúa como el cuadrado traslúcido sobre la imagen */
+  background: 
+    linear-gradient(rgba(10, 37, 64, 0.6), rgba(10, 37, 64, 0.6)),
+    url('img/paramo.webp') center/cover no-repeat;
+  padding: 4rem 1.25rem; /* Genera el espacio arriba y abajo para que se vea el paisaje */
+}
+
+.fondo-seccion-por-que-es {
+   min-height: 100vh;
+  /* El linear-gradient actúa como el cuadrado traslúcido sobre la imagen */
+  background: 
+    linear-gradient(rgba(10, 37, 64, 0.6), rgba(10, 37, 64, 0.6)),
+    url('img/amazonas2.jfif') center/cover no-repeat;
   padding: 4rem 1.25rem; /* Genera el espacio arriba y abajo para que se vea el paisaje */
 }
 
@@ -235,6 +228,46 @@ h1, h2 { line-height: 1.15; }
   margin-top: 1.5rem;
   animation: pulse 2s infinite;
 }
+
+
+
+
+.seccion-video-wrapper {
+  background-color:  #062b50; /* Fondo azul oscuro */
+  min-height: 100vh; /* Altura mínima de toda la pantalla */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente dejando espacio arriba y abajo */
+  align-items: center; /* Centra el contenido horizontalmente */
+  padding: 2rem; /* Margen de seguridad interno */
+}
+
+.seccion-video-wrapper h2 {
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2rem; /* Espacio entre el título y el video */
+  text-align: center;
+}
+
+.video-container {
+  width: 80%; /* Hace que el video ocupe el 80% del espacio, dejando 10% a cada lado */
+  max-width: 750px; /* Límite máximo para que no se vea excesivamente grande en PC */
+  aspect-ratio: 16 / 9; /* Mantiene la proporción perfecta de YouTube */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  background-color: #000;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
 
 @keyframes pulse {
   0%, 100% { opacity: 0.5; }
