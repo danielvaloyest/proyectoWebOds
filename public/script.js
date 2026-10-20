@@ -77,7 +77,7 @@ if ('IntersectionObserver' in window) {
     entries.forEach((e) => {
       e.target.classList.toggle('is-visible', e.isIntersecting);
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
 
   reveals.forEach((el) => obs.observe(el));
 } else {

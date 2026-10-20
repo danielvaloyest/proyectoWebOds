@@ -593,3 +593,105 @@ h1, h2 { line-height: 1.15; }
 .ruta::before,
 .ruta::after { z-index: 0; }
 .ruta__paso { z-index: 1; }
+
+
+.js .reveal.from-left.is-visible,
+.js .reveal.from-right.is-visible,
+.js .reveal.from-up.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+body { overflow-x: hidden; }
+
+.eco-grid,
+.uso,
+.actions {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+.eco__wrap > *, .uso > *, .eco-grid > * { min-width: 0; }
+
+@media (max-width: 760px) {
+
+  .js .reveal.from-left  { transform: translateX(-24px); }
+  .js .reveal.from-right { transform: translateX(24px); }
+  .js .reveal.from-up    { transform: translateY(24px); }
+
+  .problema { padding: 0 1rem 4rem; }
+  .problema__intro {
+    min-height: 100svh;
+    padding: 6.5rem 0 3rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
+  .problema__escudo img { max-width: min(60vw, 240px); }
+  .problema__titulo {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    padding: 0 0 1rem;
+    border-left: 0;
+    border-bottom: 4px solid var(--aqua);
+  }
+  .problema__bloque { display: block; min-height: auto; padding: 3rem 0; }
+  .problema__texto {
+    padding: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    border-radius: 20px 20px 20px 48px;
+  }
+  .problema__bloque:nth-of-type(3) .problema__texto {
+    border-radius: 20px 20px 48px 20px;
+  }
+
+  .eco { display: block; min-height: auto; padding: 6rem 1rem 3.5rem; }
+  .eco__wrap { gap: 2rem; }
+  .eco__titulo { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  .eco__nota { margin-top: -1rem; font-size: 1rem; }
+  .eco__lead {
+    padding: 1.4rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    border-radius: 20px 20px 20px 48px;
+  }
+
+  .ruta { padding-top: 0; }
+  .ruta::before, .ruta::after { left: 20px; }
+  .ruta__paso:nth-child(odd),
+  .ruta__paso:nth-child(even) {
+    width: 100%;
+    margin: 0 0 2rem;
+    padding: 0 0 0 3.6rem;
+    text-align: left;
+  }
+  .ruta__paso:last-child { margin-bottom: 0; }
+  .ruta__icono { width: 40px; height: 40px; font-size: 1.1rem; }
+  .ruta__paso:nth-child(odd) .ruta__icono,
+  .ruta__paso:nth-child(even) .ruta__icono { left: 0; right: auto; }
+  .ruta__card { padding: 1.1rem; border-radius: 16px; }
+  .ruta__card h3 { font-size: 1.1rem; }
+  .ruta__card p { font-size: .95rem; }
+
+  .uso { grid-template-columns: 1fr; gap: 1.25rem; }
+  .uso__caja { padding: 1.5rem; border-radius: 20px 20px 20px 48px; }
+  .uso__caja--no { border-radius: 20px 20px 48px 20px; }
+  .uso__caja h3 { font-size: 1.2rem; }
+  .uso__caja ul { font-size: 1rem; }
+
+  .chips { gap: .5rem; }
+  .chips span { padding: .45rem .9rem; font-size: .9rem; }
+  .flujo { flex-direction: column; gap: .15rem; }
+  .flujo span {
+    width: min(220px, 80%);
+    text-align: center;
+    border-radius: 18px;
+  }
+  .flujo i { transform: rotate(90deg); font-size: 1.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal.from-left,
+  .js .reveal.from-right,
+  .js .reveal.from-up { transform: none; }
+}
