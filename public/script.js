@@ -67,3 +67,19 @@ form.addEventListener('submit', async (e) => {
     boton.disabled = false;
   }
 });
+
+document.documentElement.classList.add('js');
+
+const reveals = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      e.target.classList.toggle('is-visible', e.isIntersecting);
+    });
+  }, { threshold: 0.35 });
+
+  reveals.forEach((el) => obs.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add('is-visible'));
+}
