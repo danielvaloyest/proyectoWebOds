@@ -23,7 +23,7 @@ app.post('/api/registro', (req, res) => {
   const { nombre, documento, grado, telefono } = req.body || {};
   const okNombre = typeof nombre === 'string' && /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,25}$/.test(nombre.trim()) && nombre.trim().length >= 3;
   const okDoc = /^\d{10}$/.test(documento);
-  const okTel = /^\d{11}$/.test(telefono);
+  const okTel = /^\d{10}$/.test(telefono);
   const okGrado = typeof grado === 'string' && grado.trim().length > 0 && grado.length <= 40;
 
   if (!okNombre || !okDoc || !okTel || !okGrado) {

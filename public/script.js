@@ -12,7 +12,7 @@ const reglas = {
   },
   documento: (v) => (/^\d{10}$/.test(v) ? '' : 'Debe tener exactamente 10 dígitos'),
   grado: (v) => (v ? '' : 'Selecciona un grado'),
-  telefono: (v) => (/^\d{11}$/.test(v) ? '' : 'Debe tener exactamente 11 dígitos')
+  telefono: (v) => (/^\d{10}$/.test(v) ? '' : 'Debe tener exactamente 10 dígitos')
 };
 
 const mostrarError = (campo, msg) => {
